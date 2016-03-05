@@ -11,38 +11,38 @@
 
 namespace IDDQD
 {
-float4 PS_DosFX(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
-{
-	float2 xs = ReShade::ScreenSize / PIXELSIZE;
+	float4 PS_DosFX(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
+	{
+		float2 xs = ReShade::ScreenSize / PIXELSIZE;
 	
 #if ENABLE_SCREENSIZE
-	xs = DOSScreenSize;
+		xs = DOSScreenSize;
 #endif
 	
-	texcoord.xy = floor(texcoord.xy * xs) / xs;
+		texcoord.xy = floor(texcoord.xy * xs) / xs;
 
-	float4 origcolor = tex2D(ReShade::BackBuffer, texcoord);
+		float4 origcolor = tex2D(ReShade::BackBuffer, texcoord);
 
-	origcolor += 0.0001;
+		origcolor += 0.0001;
 
 #if DOSCOLOR
-	float graymax = max(origcolor.x, max(origcolor.y, origcolor.z));
-	float3 ncolor = origcolor.xyz / graymax;
-	graymax = floor(graymax * DOSColorsCount) / DOSColorsCount;
-	origcolor.xyz *= graymax;
+		float graymax = max(origcolor.x, max(origcolor.y, origcolor.z));
+		float3 ncolor = origcolor.xyz / graymax;
+		graymax = floor(graymax * DOSColorsCount) / DOSColorsCount;
+		origcolor.xyz *= graymax;
 #if ENABLE_POSTCURVE
-	origcolor.xyz = pow(origcolor.xyz, POSTCURVE);
+		origcolor.xyz = pow(origcolor.xyz, POSTCURVE);
 #endif
 #endif
 
-	return origcolor;
-}
-float4 PS_DosGamma(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
-{
-	float4 color = tex2D(ReShade::BackBuffer, texcoord);
-	color.xyz = lerp(color.xyz, -0.0039 * pow(1.0 / 0.0039, 1.0 - color.xyz) + 1.0, 0.7 * (DoSgammaValue / 2.2));
-	return color;
-}
+		return origcolor;
+	}
+	float4 PS_DosGamma(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
+	{
+		float4 color = tex2D(ReShade::BackBuffer, texcoord);
+		color.xyz = lerp(color.xyz, -0.0039 * pow(1.0 / 0.0039, 1.0 - color.xyz) + 1.0, 0.7 * (DoSgammaValue / 2.2));
+		return color;
+	}
 }
 
 technique DosFX_Tech < enabled = RESHADE_START_ENABLED; toggle = Dos_ToggleKey; >
