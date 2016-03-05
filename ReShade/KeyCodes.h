@@ -3,31 +3,24 @@
  *
  * This file shows a complete list of all the virtual keys VK_ aliases and their hex value.
  * You can use either the alias, the hex value or the decimal value for ReShade key bindings.
+ *
+ * Below is US ANSI keyboard (104 keys) reference for the key codes in decimal:
+ * .---.  .---.---.---.---. .---.---.---.---. .---.---.---.---.  .---.---.---.
+ * | 27|  |112|113|114|115| |116|117|118|119| |120|121|122|123|  | 44|145| 19|
+ * `---'  `---'---'---'---' `---'---'---'---' `---'---'---'---'  `---'---'---'
+ *
+ * .---.---.---.---.---.---.---.---.---.---.---.---.---.------.  .---.---.---.  .---.---.---.---.
+ * |192| 49| 50| 51| 52| 53| 54| 55| 56| 57| 48|189|187|   8  |  | 45| 36| 33|  |144|111|106|109|
+ * :---'---'---'---'---'---'---'---'---'---'---'---'---'------:  :---:---:---:  :---:---:---:---:
+ * |  9 | 81| 87| 69| 82| 84| 89| 85| 73| 79| 80|219|221| 220 |  | 46| 35| 34|  |103|104|105|   |
+ * :----'---'---'---'---'---'---'---'---'---'---'---'---'-----|  `---'---'---'  :---:---:---|107|
+ * |  20 | 65| 83| 68| 70| 71| 72| 74| 75| 76|186|222|   13   |                 |100|101|102|   |
+ * :-----'---'---'---'---'---'---'---'---'---'---'---'--------'      .---.      :---:---:---:---:
+ * |   16  | 90| 88| 67| 86| 66| 78| 77|188|190|191|    16    |      | 38|      | 97| 98| 99|   |
+ * :-------'---'---'---'---'---'---'---'---'---'---'----------'  .---:---|---.  :---'---:---| 13|
+ * | 17 | 91 | 18 |           32          | 18 | 92 | 93 | 17 |  | 37| 40| 39|  |   96  |110|   |
+ * `----'----'----'-----------------------'----'----'----'----'  `---'---'---'  `-------'---'---'
  */
-
-  /*-----------------------.
-  | :: Reference layout :: |
-  '------------------------/
-
-Keys should be set to a Windows Virtual Keycode in either decimal, hexadecimal or its VK_ alias.
-Below is US ANSI keyboard reference for the keycodes in decimal:
-
-US ANSI keyboard (104 keys) keycodes (note that your countrys keyboard layout maybe slightly different) :
-.---.  .---.---.---.---. .---.---.---.---. .---.---.---.---.  .---.---.---.
-| 27|  |112|113|114|115| |116|117|118|119| |120|121|122|123|  | 44|145| 19|
-`---'  `---'---'---'---' `---'---'---'---' `---'---'---'---'  `---'---'---'
-
-.---.---.---.---.---.---.---.---.---.---.---.---.---.------.  .---.---.---.  .---.---.---.---.
-|192| 49| 50| 51| 52| 53| 54| 55| 56| 57| 48|189|187|   8  |  | 45| 36| 33|  |144|111|106|109|
-:---'---'---'---'---'---'---'---'---'---'---'---'---'------:  :---:---:---:  :---:---:---:---:
-|  9 | 81| 87| 69| 82| 84| 89| 85| 73| 79| 80|219|221| 220 |  | 46| 35| 34|  |103|104|105|   |
-:----'---'---'---'---'---'---'---'---'---'---'---'---'-----|  `---'---'---'  :---:---:---|107|
-|  20 | 65| 83| 68| 70| 71| 72| 74| 75| 76|186|222|   13   |                 |100|101|102|   |
-:-----'---'---'---'---'---'---'---'---'---'---'---'--------'      .---.      :---:---:---:---:
-|   16  | 90| 88| 67| 86| 66| 78| 77|188|190|191|    16    |      | 38|      | 97| 98| 99|   |
-:-------'---'---'---'---'---'---'---'---'---'---'----------'  .---:---|---.  :---'---:---| 13|
-| 17 | 91 | 18 |           32          | 18 | 92 | 93 | 17 |  | 37| 40| 39|  |   96  |110|   |
-`----'----'----'-----------------------'----'----'----'----'  `---'---'---'  `-------'---'--*/
 
 #define VK_LBUTTON        0x01 // Left mouse button
 #define VK_RBUTTON        0x02 // Right mouse button
@@ -36,16 +29,8 @@ US ANSI keyboard (104 keys) keycodes (note that your countrys keyboard layout ma
 #define VK_XBUTTON1       0x05 // Mouse4 thumb button (back)
 #define VK_XBUTTON2       0x06 // Mouse5 thumb button (forward)
 
-/*
- * 0x07 : unassigned
- */
-
 #define VK_BACK           0x08
 #define VK_TAB            0x09
-
-/*
- * 0x0A - 0x0B : reserved
- */
 
 #define VK_CLEAR          0x0C
 #define VK_RETURN         0x0D
@@ -79,19 +64,9 @@ US ANSI keyboard (104 keys) keycodes (note that your countrys keyboard layout ma
 #define VK_DELETE         0x2E
 #define VK_HELP           0x2F
 
-/*
- * VK_0 - VK_9 are the same as ASCII '0' - '9' (0x30 - 0x39)
- * 0x40 : unassigned
- * VK_A - VK_Z are the same as ASCII 'A' - 'Z' (0x41 - 0x5A)
- */
-
 #define VK_LWIN           0x5B
 #define VK_RWIN           0x5C
 #define VK_APPS           0x5D
-
-/*
- * 0x5E : reserved
- */
 
 #define VK_SLEEP          0x5F
 
@@ -136,16 +111,8 @@ US ANSI keyboard (104 keys) keycodes (note that your countrys keyboard layout ma
 #define VK_F23            0x86
 #define VK_F24            0x87
 
-/*
- * 0x88 - 0x8F : unassigned
- */
-
 #define VK_NUMLOCK        0x90
 #define VK_SCROLL         0x91
-
-/*
- * 0x97 - 0x9F : unassigned
- */
 
 #define VK_LSHIFT         0xA0
 #define VK_RSHIFT         0xA1
