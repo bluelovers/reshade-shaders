@@ -1,15 +1,3 @@
-#include "Common.fx"
-
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_DEF
-#endif
-
-#if USE_AMBIENT_LIGHT
-
-#if AL_Adaptation
-#include "BrightDetect.fx"
-#endif
-
 /**
  * Copyright (C) 2015 Ganossa (mediehawk@gmail.com)
  *
@@ -39,6 +27,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+#include EFFECT_CONFIG(Ganossa)
+
+#if USE_AMBIENT_LIGHT
+
+#pragma message "Ambient Light by Ganossa\n"
+
+#if AL_Adaptation
+#include "BrightDetect.fx"
+#endif
 
 namespace Ganossa
 {
@@ -465,6 +463,4 @@ RESHADE_START_ENABLED; int toggle = AmbientLight_ToggleKey; >
 
 #endif
 
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_UNDEF
-#endif
+#include EFFECT_CONFIG_UNDEF(Ganossa)

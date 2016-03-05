@@ -1,11 +1,3 @@
-#include "Common.fx"
-
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_DEF
-#endif
-
-#if USE_ADV_MOTION_BLUR
-
 /**
  * Copyright (C) 2015 Ganossa (mediehawk@gmail.com)
  *
@@ -35,6 +27,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+#include EFFECT_CONFIG(Ganossa)
+
+#if USE_ADV_MOTION_BLUR
+
+#pragma message "Advanced Motion Blur by Ganossa\n"
 
 namespace Ganossa
 {
@@ -137,6 +135,4 @@ RESHADE_START_ENABLED; int toggle = AdvancedMB_ToggleKey; >
 
 #endif
 
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_UNDEF
-#endif
+#include EFFECT_CONFIG_UNDEF(Ganossa)

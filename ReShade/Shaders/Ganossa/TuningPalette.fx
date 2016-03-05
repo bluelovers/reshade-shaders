@@ -1,8 +1,3 @@
-#include "Common.fx"
-#include Ganossa_SETTINGS_DEF
-
-#if USE_TUNINGPALETTE
-
 /**
  * Copyright (C) 2015 Ganossa (mediehawk@gmail.com)
  *
@@ -32,6 +27,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+#include EFFECT_CONFIG(Ganossa)
+
+#if USE_TUNINGPALETTE
+
+#pragma message "TuningPalette by Ganossa\n"
 
 namespace Ganossa
 {
@@ -148,4 +149,4 @@ technique TuningPalette_Tech <bool enabled = RESHADE_START_ENABLED; int toggle =
 
 #endif
 
-#include Ganossa_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(Ganossa)

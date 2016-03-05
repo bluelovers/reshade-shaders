@@ -21,7 +21,9 @@
 
 #include EFFECT_CONFIG(Alo81)
 
-#if (USE_GRAIN == 1)
+#if USE_GRAIN
+
+#pragma message "Film Grain by martinsh (ported by Alo81)\n"
 
 namespace Alo81
 {
@@ -145,4 +147,4 @@ technique Grain_Tech < enabled = RESHADE_START_ENABLED; toggle = Grain_ToggleKey
 
 #endif
 
-#include "ReShade/Shaders/Alo81.undef"
+#include EFFECT_CONFIG_UNDEF(Alo81)

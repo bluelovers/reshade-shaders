@@ -18,6 +18,8 @@
 
 #if USE_VHS
 
+#pragma message "VHS by Vladmir Storm, ryk, drmelon, Klowner and UltraMoogleMan (ported by IDDQD, posted by Matsilagi, further optimized by crosire, MartyMcFly and Ganossa)\n"
+
 namespace IDDQD
 {
 #if (sNoiseMode == 1)
@@ -492,4 +494,4 @@ technique VHSReShade < enabled = RESHADE_START_ENABLED; toggle = VHS_ToggleKey; 
 
 #endif
 
-#include "ReShade/Shaders/IDDQD.undef"
+#include EFFECT_CONFIG_UNDEF(IDDQD)

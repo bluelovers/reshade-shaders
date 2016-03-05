@@ -1,8 +1,3 @@
-#include "Common.fx"
-#include Otis_SETTINGS_DEF
-
-#if USE_DEPTHHAZE
-
 ///////////////////////////////////////////////////////////////////
 // This effect works like a one-side DoF for distance haze, which slightly
 // blurs far away elements. A normal DoF has a focus point and blurs using
@@ -13,6 +8,13 @@
 // it uses depth-difference for extra weight in the blur method so edges
 // of high-contrasting lines with high depth diffence don't bleed.
 ///////////////////////////////////////////////////////////////////
+
+#include EFFECT_CONFIG(Otis)
+#include "Common.fx"
+
+#if USE_DEPTHHAZE
+
+#pragma message "DepthHaze by Otis\n"
 
 namespace Otis
 {
@@ -101,4 +103,4 @@ technique Otis_DEH_Tech <bool enabled = false; int toggle = DEH_ToggleKey; >
 
 #endif
 
-#include Otis_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(Otis)

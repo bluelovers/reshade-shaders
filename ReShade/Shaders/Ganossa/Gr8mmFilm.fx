@@ -1,8 +1,3 @@
-#include "Common.fx"
-#include Ganossa_SETTINGS_DEF
-
-#if USE_GR8MMFILM
-
 /**
  * Copyright (C) 2015 Ganossa (mediehawk@gmail.com)
  *
@@ -32,6 +27,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+#include EFFECT_CONFIG(Ganossa)
+
+#if USE_GR8MMFILM
+
+#pragma message "Gr8mmFilm by Ganossa\n"
 
 namespace Ganossa
 {
@@ -72,4 +73,4 @@ technique Gr8mmFilm_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = Gr8
 
 #endif
 
-#include Ganossa_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(Ganossa)

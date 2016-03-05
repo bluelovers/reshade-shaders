@@ -7,6 +7,8 @@
 
 #if USE_DOSFX
 
+#pragma message "DOS effect by Boris Vorontsov (ported by IDDQD)\n"
+
 namespace IDDQD
 {
 float4 PS_DosFX(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
@@ -61,4 +63,4 @@ technique DosFX_Tech < enabled = RESHADE_START_ENABLED; toggle = Dos_ToggleKey; 
 
 #endif
 
-#include "ReShade/Shaders/IDDQD.undef"
+#include EFFECT_CONFIG_UNDEF(IDDQD)

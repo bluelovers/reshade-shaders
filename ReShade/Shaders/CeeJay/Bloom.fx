@@ -1,7 +1,9 @@
+#include EFFECT_CONFIG(CeeJay)
 #include "Common.fx"
-#include CeeJay_SETTINGS_DEF
 
-#if (USE_BLOOM == 1)
+#if USE_BLOOM
+
+#pragma message "Bloom by CeeJay\n"
 
 /*------------------------------------------------------------------------------
 						BLOOM
@@ -86,7 +88,7 @@ technique Bloom_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = Bloom_T
 
 }
 
-#include "ReShade\Shaders\CeeJay\PiggyCount.h"
+#include "PiggyCount.h"
 #endif
 
-#include CeeJay_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(CeeJay)

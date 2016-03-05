@@ -1,11 +1,3 @@
-#include "Common.fx"
-
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_DEF
-#endif
-
-#if USE_TILTSHIFT
-
 /**
  * Copyright (C) 2015 Ganossa (mediehawk@gmail.com)
  *
@@ -34,10 +26,15 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
+ *
+ * Credits: Based on kingeric1992's TiltShift effect
  */
-/**
- * Credits::Based on kingeric1992's TiltShift effect
- */
+
+#include EFFECT_CONFIG(Ganossa)
+
+#if USE_TILTSHIFT
+
+#pragma message "TiltShift by kingeric1992 and Ganossa\n"
 
 #define ScreenRatio float(-BUFFER_WIDTH / BUFFER_HEIGHT)
 
@@ -153,6 +150,4 @@ RESHADE_START_ENABLED; int toggle = TiltShift_ToggleKey; >
 
 #endif
 
-#ifndef RFX_duplicate
-#include Ganossa_SETTINGS_UNDEF
-#endif
+#include EFFECT_CONFIG_UNDEF(Ganossa)

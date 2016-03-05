@@ -1,8 +1,3 @@
-#include "Common.fx"
-#include CeeJay_SETTINGS_DEF
-
-#if (USE_PIXELART_CRT == 1)
-
 //
 // PUBLIC DOMAIN CRT STYLED SCAN-LINE SHADER
 //
@@ -19,6 +14,13 @@
 //
 
 //Ported to HLSL by CeeJay.dk
+
+#include EFFECT_CONFIG(CeeJay)
+#include "Common.fx"
+
+#if USE_PIXELART_CRT
+
+#pragma message "PixelArt CRT by Timothy Lottes (ported by CeeJay)\n"
 
 namespace CeeJay
 {
@@ -227,7 +229,7 @@ technique Pixelart_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = Pixe
 
 }
 
-#include "ReShade\Shaders\CeeJay\PiggyCount.h"
+#include "PiggyCount.h"
 #endif
 
-#include CeeJay_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(CeeJay)

@@ -1,25 +1,27 @@
-#include "Common.fx"
-#include CeeJay_SETTINGS_DEF
-
-#if (USE_ASCII == 1)
-
-  /*------------.
-  | :: Ascii :: |
-  '------------*/
+/*------------.
+| :: Ascii :: |
+'------------*/
 /*
-  Ascii by Christian Cann Schuldt Jensen ~ CeeJay.dk
+Ascii by Christian Cann Schuldt Jensen ~ CeeJay.dk
 
-	Converts the image to ASCII characters using a greyscale algoritm,
-	cherrypicked characters and a custom bitmap font stored in a set of floats.
-	
-	It has 17 gray levels but uses dithering to greatly increase that number.
-	
+Converts the image to ASCII characters using a greyscale algoritm,
+cherrypicked characters and a custom bitmap font stored in a set of floats.
+
+It has 17 gray levels but uses dithering to greatly increase that number.
+
 Version 0.7. by CeeJay.dk
 - a work in progress
 
 0.7 adds the 3x5 font
 
 */
+
+#include EFFECT_CONFIG(CeeJay)
+#include "Common.fx"
+
+#if USE_ASCII
+
+#pragma message "ASCII by CeeJay\n"
 
 /*
   .---------------------.
@@ -468,7 +470,7 @@ technique Ascii_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = Ascii_T
 
 }
 
-#include "ReShade\Shaders\CeeJay\PiggyCount.h"
+#include "PiggyCount.h"
 #endif
 
-#include CeeJay_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(CeeJay)

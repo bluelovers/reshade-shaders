@@ -40,6 +40,8 @@
 
 #if USE_ADAPTIVESHARPEN
 
+#pragma message "Adaptive Sharpen by bacondither\n"
+
 namespace bacondither
 {
 	texture Pass0Tex { Width = BUFFER_WIDTH; Height = BUFFER_HEIGHT; Format = RG16F; };
@@ -315,4 +317,4 @@ technique AdaptiveSharpen_Tech < enabled = RESHADE_START_ENABLED; toggle = Adapt
 
 #endif
 
-#include "ReShade/Shaders/bacondither.undef"
+#include EFFECT_CONFIG_UNDEF(bacondither)

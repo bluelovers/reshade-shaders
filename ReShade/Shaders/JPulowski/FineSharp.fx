@@ -1,7 +1,7 @@
 /**
  * FineSharp by Didée
  * http://avisynth.nl/images/FineSharp.avsi
- * 
+ *
  * Initial HLSL port by -Vit-
  * https://forum.doom9.org/showthread.php?t=171346
  *
@@ -15,6 +15,8 @@
 #include EFFECT_CONFIG(JPulowski)
 
 #if USE_FINESHARP
+
+#pragma message "FineSharp by Didee (ported by -Vit- and JPulowski)\n"
 
 namespace JPulowski
 {
@@ -288,4 +290,4 @@ technique FineSharp_Tech < enabled = RESHADE_START_ENABLED; toggle = FineSharp_T
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

@@ -37,6 +37,8 @@
 
 #if USE_DEBAND
 
+#pragma message "Deband by haasn (ported by JPulowski)\n"
+
 namespace JPulowski
 {
 	uniform int drandom < source = "random"; min = 0; max = 5000; >;
@@ -112,4 +114,4 @@ technique Deband_Tech < enabled = RESHADE_START_ENABLED; toggle = Deband_ToggleK
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

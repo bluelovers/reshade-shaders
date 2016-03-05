@@ -1,7 +1,9 @@
+#include EFFECT_CONFIG(MartyMcFly)
 #include "Common.fx"
-#include MartyMcFly_SETTINGS_DEF
 
 #if USE_EMBOSS
+
+#pragma message "Emboss by Marty McFly\n"
 
 namespace MartyMcFly
 {
@@ -52,4 +54,4 @@ technique Emboss_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = Emboss
 
 #endif
 
-#include MartyMcFly_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(MartyMcFly)

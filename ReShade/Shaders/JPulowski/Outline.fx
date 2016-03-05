@@ -24,6 +24,8 @@
 
 #if USE_OUTLINE
 
+#pragma message "Outline by kingeric1992 (ported by JPulowski)\n"
+
 namespace JPulowski
 {
 #if !OutlineEdgeDetection
@@ -123,4 +125,4 @@ technique Outline_Tech < enabled = RESHADE_START_ENABLED; toggle = Outline_Toggl
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

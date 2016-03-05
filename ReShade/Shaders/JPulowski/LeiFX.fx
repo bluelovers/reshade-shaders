@@ -22,6 +22,8 @@
 
 #if USE_LEIFX
 
+#pragma message "LeiFX by leilei (ported by JPulowski)\n"
+
 namespace JPulowski
 {
 	float3 PS_LEIFX_P0(float4 vpos : SV_POSITION, float2 texcoord : TEXCOORD0) : SV_TARGET
@@ -132,4 +134,4 @@ technique LeiFX_Tech < enabled = RESHADE_START_ENABLED; toggle = LeiFX_ToggleKey
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

@@ -6,6 +6,8 @@
 
 #if USE_HQ4X
 
+#pragma message "HQ4X by Maxim Stepin, Cameron Zemek, Jules Blok and tz\n"
+
 float4 PS_HQ4X(float4 pos : SV_Position, float2 uv : TEXCOORD) : SV_Target
 {
 	float mx = HQ4XSmoothing; // start smoothing wt.
@@ -91,4 +93,4 @@ technique HQ4X_Tech < enabled = RESHADE_START_ENABLED; toggle = HQ4X_ToggleKey; 
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

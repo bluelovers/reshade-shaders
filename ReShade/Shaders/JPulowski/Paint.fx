@@ -34,6 +34,8 @@
 
 #if USE_PAINT
 
+#pragma message "Kuwahara Filtering by Jan Eric Kyprianidis (ported by kingeric1992 and JPulowski)\n"
+
 namespace JPulowski
 {
 	float3 PS_ModePaint(float4 vpos : SV_POSITION, float2 texcoord : TEXCOORD0) : SV_TARGET
@@ -157,4 +159,4 @@ technique Paint_Tech < enabled = RESHADE_START_ENABLED; toggle = Paint_ToggleKey
 
 #endif
 
-#include "ReShade/Shaders/JPulowski.undef"
+#include EFFECT_CONFIG_UNDEF(JPulowski)

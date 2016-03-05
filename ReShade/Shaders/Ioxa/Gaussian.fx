@@ -37,6 +37,8 @@
 
 #if USE_GAUSS
 
+#pragma message "Gaussian Blur by Jorge Jimenez, Boulotaur2024 (ported by Ioxa)\n"
+
 namespace Ioxa
 {
 	static const float3 CoefLuma_G = float3(0.2126, 0.7152, 0.0722); // BT.709 & sRBG luma coefficient (Monitors and HD Television)
@@ -957,4 +959,4 @@ technique Gaussian_Tech < enabled = RESHADE_START_ENABLED; toggle = Gaussian_Tog
 
 #endif
 
-#include "ReShade/Shaders/Ioxa.undef"
+#include EFFECT_CONFIG_UNDEF(Ioxa)

@@ -1,7 +1,9 @@
+#include EFFECT_CONFIG(CeeJay)
 #include "Common.fx"
-#include CeeJay_SETTINGS_DEF
 
-#if (USE_HDR == 1)
+#if USE_HDR
+
+#pragma message "HDR by CeeJay\n"
 
 /*------------------------------------------------------------------------------
 						HDR
@@ -79,7 +81,7 @@ technique HDR_Tech <bool enabled = RESHADE_START_ENABLED; int toggle = HDR_Toggl
 
 }
 
-#include "ReShade\Shaders\CeeJay\PiggyCount.h"
+#include "PiggyCount.h"
 #endif
 
-#include CeeJay_SETTINGS_UNDEF
+#include EFFECT_CONFIG_UNDEF(CeeJay)

@@ -7,6 +7,8 @@
 
 #if USE_DALTONIZEFX
 
+#pragma message "DaltonizeFX (ported by IDDQD)\n"
+
 namespace IDDQD
 {
 float4 PS_DaltonizeFX(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
@@ -69,4 +71,4 @@ technique DaltonizeFX_Tech < enabled = RESHADE_START_ENABLED; toggle = Daltonize
 
 #endif
 
-#include "ReShade/Shaders/IDDQD.undef"
+#include EFFECT_CONFIG_UNDEF(IDDQD)
