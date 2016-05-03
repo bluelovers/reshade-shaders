@@ -7,6 +7,8 @@
 
 #include "ReShade\KeyCodes.h"
 
+#pragma reshade screenshot_location "./Reshade Screenshot"
+
 // Global Settings
 #if exists(STE(ReShade/Profiles/__APPLICATION_NAME__/Global.cfg))
 	#include STE(ReShade/Profiles/__APPLICATION_NAME__/Global.cfg)
@@ -40,7 +42,7 @@ namespace ReShade
 	uniform float Timer < source = "timer"; >;
 	uniform float FrameTime < source = "frametime"; >;
 	uniform float2 MouseCoords < source = "mousepoint"; >;
-	
+
 	// Global Textures and Samplers
 	texture BackBufferTex : COLOR;
 	texture DepthBufferTex : DEPTH;
