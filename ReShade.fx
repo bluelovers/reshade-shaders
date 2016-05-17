@@ -29,6 +29,10 @@
 #endif
 #if RESHADE_SHOW_TOGGLE_MESSAGES
 	#pragma reshade showtogglemessage
+
+	#pragma message "APPLICATION_NAME: "
+    #pragma message STE(__APPLICATION_NAME__)
+    #pragma message "\n"
 #endif
 
 namespace ReShade
